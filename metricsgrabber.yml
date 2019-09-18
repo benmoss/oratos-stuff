@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: metrics-grabber
+  name: metrics-grabber
+spec:
+  serviceAccountName: metrics-grabber
+  containers:
+  - image: tutum/curl:latest
+    command: ["bash"]
+    args: ["-c", "sleep infinity"]
+    name: metrics-grabber
